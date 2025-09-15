@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+
+:root{
+        /* colors */
+        --black: #000000;
+        --grey: #6b6b6b;
+        --white: #ffffff;
+        /* fonts */
+        --title-font: "Special Elite";
+        --body-font: "Montserrat";
+    }
+
+    * {box-sizing:border-box}
+
+     body {
+        margin: auto;
+        background-color: var(--black);
+        font-family: var(--body-font);
+        font-weight: 400;
+        overflow-x: hidden;
+    }
+
+     main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--title-font);
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    p{
+        color:var(--white)
+    }
+
+    strong{
+        font-family: var(--title-font);
+        font-weight: 500;
+        font-size: 35pt;
+    }
+
+#page-top{
+    justify-content: center;
+}
+
+    a{
+        color: var(--white);
+    }
+
+    a:hover {
+        color: var(--grey);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        top: 0;
+        text-align: center;
+        background-color: var(--black);
+        font-size: 1.6em;
+        font-weight: 500;
+        /* z-index brings items forward or backward in relation to other content */
+        z-index: 2;
+        font-family: var(--title-font);
+    }
+
+    nav a {
+        margin: 0.4em;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.4em 1em;
+    }
+    nav a:hover {
+        color: var(--grey);
+        background-color: var(--white);
+        /* This transition adds smoothness to the hover effect */
+        transition: color 0.2s ease;
+        transition: background-color 0.2s ease;
+    }
+
+     header {
+        display: flex;
+        align-items: center;
+        width: 100vw;
+    }
+     header h1 {
+        padding: 1rem;
+        width: 80%;
+        margin: auto;
+        max-width: 100%; /* Ensures the image will not exceed its container's width */
+        height: auto;    /* Maintains the image's aspect ratio */
+    }
+
+      header h1 span{
+        color: var(--white);
+    }
+
+    hr {
+        margin: 0em 0px 0px;
+    }
+
+     section h2 {
+        font-size: 4em;
+        margin: 0;
+    }
+    section h3 {
+        font-size: 2em;
+    }
+
+
+
+    .two-column-container {
+        display: inline-grid;
+        grid-template-columns: 2fr 1fr;
+        width: 100%;
+        text-align: left;
+        margin: 0em 0;
+    }
+    .two-column-container img{
+        border-radius: 1em;
+    }
+
+    .section digital-handbook{
+        margin-left: 0%;
+    }
+
+    .img-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .about-text{
+    width: 750px;
+    font-size: x-large;
+    }
+
+    .handbook-text{
+        width: 450px;
+        font-size: x-large
+    }
+
+    .handbook-heading{
+        font-size: 64pt;
+    }
+
+    .radio-one{
+        margin-left: 20%;
+    }
+
+    .handbook-button {
+    font: var(--title-font);
+    margin-left: 98%;
+    background-color: #000000; /* Blue background */
+    color: white; /* White text */
+    border: 3px white; /* No border */
+    width: 200px;
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 30px; /* Text size */
+    cursor: pointer; /* Changes the mouse cursor to a hand on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.handbook-button:hover {
+  background-color: #414141; /* Darker blue on hover */
+}
+
+.handbook-button:active {
+  background-color: #850000; /* Even darker blue when clicked */
+}
+
+    .map{
+        padding: 3em;
+        border-radius: 4em;
+    }
+
+    .map:active{
+        width: 1200px;
+
+    }
+
+    /*** Carousel Section ***/
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    z-index: 0;
+}
+.slideshow-container img{
+    border-radius: 1em;
+}
+.mySlides {
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+.text {
+    color: var(--white);
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation on carousel change */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
