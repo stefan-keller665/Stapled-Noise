@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Special+Elite&display=swap');
 
 :root{
         /* colors */
@@ -150,8 +150,8 @@
         width: 100vw;
     }
      header h1 {
-        padding: 2rem;
-        width: 80%;
+        padding: 1rem;
+        width: 100%;
         margin: auto;
         max-width: 100%; /* Ensures the image will not exceed its container's width */
         height: auto;    /* Maintains the image's aspect ratio */
@@ -387,6 +387,8 @@
         height: 35vh;
         border: 0;
     }
+
+  
  
     /* Form Styling */
     .contact-container {
@@ -430,6 +432,10 @@
         font-family: Arial, sans-serif;
       }
 
+      #map h3{
+        align-content: center;
+      }
+
 
       #map{
         align-content: center;
@@ -465,12 +471,11 @@
         border-radius: 50%;
         cursor: pointer;
         transform: translate(-50%, -50%);
-        z-index: 1;
       }
 
       .dot .popup {
         position: absolute;
-        top: -120px; /* or whatever works */
+        top: -px; /* or whatever works */
         left: 50%;
         transform: translateX(-50%);
         background-color: white;
@@ -479,7 +484,6 @@
         width: 200px;
         padding: 10px;
         display: none;
-        z-index: 10; /* Popup above dot */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
 
@@ -490,13 +494,18 @@
   opacity: 0;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  padding: 2px 6px;
+  padding: 2px 2px;
   font-size: 13px;
   white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   pointer-events: none;
-  z-index: 2;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: "Oswald";
+  font-weight: 100;
+}
+.bold{
+  font-weight: 400;
+  padding: 0;
 }
 
 /* Show labels when hovering over the whole map container */
@@ -522,22 +531,26 @@
 
 /* Label ABOVE the dot */
 .dot .label.top {
-  bottom: 100%; /* places it just above the dot */
-  left: 50%;
+  bottom: -30%; /* places it just above the dot */
+  left: -150%;
   top: auto;
   transform: translateX(-50%);
 }
 
 /* Label BELOW the dot */
 .dot .label.bottom {
-  top: 125%; /* places it just below the dot */
-  left: 50%;
+  top: 250%; /* places it just below the dot */
+  left: -150%;
   transform: translateX(-50%);
+}
+
+.dot .label.top-right{
+  bottom: -30%;
 }
       
       .popup {
         position: absolute;
-        top: -120px; /* Adjust depending on content */
+        top: -250px; /* Adjust depending on content */
         left: 50%;
         transform: translateX(-50%);
         background-color: rgb(255, 255, 255);
@@ -546,7 +559,6 @@
         width: 200px;
         padding: 10px;
         display: none;
-        z-index: 100;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         opacity: 0;
         transition: opacity 0.2s ease;
@@ -578,6 +590,10 @@
         background-color: #555;
       }
 
+      .popup .pioneer-hall{
+        transform: translateY(200px);
+      }
+
         .info{
           color: black;
         }
@@ -586,6 +602,18 @@
         display: block;
         opacity: 1;
         pointer-events: auto;
+      }
+
+      .dot{
+        z-index: 2;
+      }
+
+      .label{
+        z-index: 1;
+      }
+
+      .popup{
+        z-index: 3;
       }
 
     .info p{
@@ -598,19 +626,20 @@
 
       #about-ash{
         background-color: white;
-        border-radius: 6px;
+        border-radius: 12px;
       }
 
       #about-ash p{
         color: black;
-        padding: 1.6em;
+        padding: 2em;
+        width: 800px;
       }
 
       .ash-photo{
         padding: 1.6em;
         border-radius: 10px;
         margin-top: 5%;
-        margin-left: 2%;
+        margin-left: 20%;
       }
 
       #site-footer {
@@ -665,4 +694,6 @@
         background-color: #333;
         color: #fff;
       }
+
+    
       
