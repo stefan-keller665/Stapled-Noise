@@ -72,6 +72,7 @@
         /* z-index brings items forward or backward in relation to other content */
         z-index: 2;
         font-family: var(--title-font);
+        border-radius: 5px; /* Rounded corners */
     }
 
     nav a {
@@ -81,12 +82,67 @@
         padding: 0.4em 1em;
     }
     nav a:hover {
-        color: var(--grey);
-        background-color: var(--white);
+        color: var(--black);
+        background-color: red;
         /* This transition adds smoothness to the hover effect */
         transition: color 0.2s ease;
         transition: background-color 0.2s ease;
     }
+
+    .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  font-size: 1em;
+  margin: 0.4em;
+  padding: 0.4em 1em;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+  color: var(--black);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  font-size: 0.6em;
+  font-family: var(--body-font);
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
      header {
         display: flex;
@@ -94,7 +150,7 @@
         width: 100vw;
     }
      header h1 {
-        padding: 1rem;
+        padding: 2rem;
         width: 80%;
         margin: auto;
         max-width: 100%; /* Ensures the image will not exceed its container's width */
@@ -116,6 +172,75 @@
     section h3 {
         font-size: 2em;
     }
+
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #2b2b2b;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+
+      #my.Btn{
+        background-color: #000000;
+        color: rgb(0, 0, 0); /* White text */
+        border: rgb(0, 0, 0) 30px;
+        cursor: pointer; /* Changes the mouse cursor to a hand on hover */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      .about-button {
+        display: inline-flexbox;
+        font-family: var(--body-font);
+        margin-top: 1.2em;
+        background-color: #000000;
+        color: rgb(255, 255, 255); /* White text */
+        border: rgb(0, 0, 0) 30px;
+        font-size: 20px; /* Text size */
+        cursor: pointer; /* Changes the mouse cursor to a hand on hover */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      .about-button:hover {
+        background-color: #acacac; 
+      }
+      
+      .about-button:active {
+        background-color: #850000; 
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        cursor: pointer;
+      }
 
 
 
@@ -140,7 +265,7 @@
     }
 
     .about-text{
-    width: 750px;
+    width: 800px;
     font-size: x-large;
     }
 
@@ -154,17 +279,18 @@
     }
 
     .radio-one{
-        margin-left: 20%;
+        margin-left: 10%;
     }
 
     .handbook-button {
-    font: var(--title-font);
-    margin-left: 98%;
-    background-color: #000000;
-    color: white; /* White text */
+    display: inline-flexbox;
+    font-family: var(--title-font);
+    margin-top: 1.2em;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0); /* White text */
     border: white 30px;
     width: 200px;
-    padding: 10px 20px; /* Padding around the text */
+    padding: 20px 20px; /* Padding around the text */
     font-size: 30px; /* Text size */
     cursor: pointer; /* Changes the mouse cursor to a hand on hover */
     border-radius: 5px; /* Rounded corners */
@@ -172,22 +298,18 @@
 }
 
 .handbook-button:hover {
-  background-color: #414141; 
+  background-color: #acacac; 
 }
 
 .handbook-button:active {
   background-color: #850000; 
 }
 
-    #map{
-        align-content: center;
-        padding: 3em;
-        border-radius: 4em;
-    }
 
-    .map:active{
-        width: 1200px;
 
+    .handbook:hover{
+        width: 710px;
+        transition: 0.3s ease;
     }
 
     /*** Carousel Section ***/
@@ -209,7 +331,7 @@
     top: 50%;
     width: auto;
     margin-top: -22px;
-    padding: 16px;
+    padding: 10px;
     color: rgb(255, 0, 0);
     font-weight: bold;
     font-size: 18px;
@@ -224,17 +346,9 @@
 .prev:hover, .next:hover {
     background-color: rgba(255, 0, 0, 0.8);
 }
-.text {
-    color: var(--white);
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
+
 .numbertext {
-    color: #f2f2f2;
+    color: #ff0000;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -267,3 +381,288 @@
 .title{
     margin-left:25%;
 }
+
+ iframe{
+        width: 80%;
+        height: 35vh;
+        border: 0;
+    }
+ 
+    /* Form Styling */
+    .contact-container {
+        padding: 20px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    /* Style the input elements and the submit button */
+    input[type=text], input[type=submit] {
+        width: 50%;
+        padding: 12px;
+        margin: 16px auto;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+  
+    /* Style the submit button */
+    input[type=submit] {
+        width: 25%;
+        color: var(--light-cyan);
+        background-color: var(--paynes-grey);
+        border: none;
+        font-weight: 600;
+    }
+  
+    input[type=submit]:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    } 
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+
+      #map{
+        align-content: center;
+        padding: 3em;
+        border-radius: 4em;
+    }
+
+      
+      .map-container {
+        position: relative;
+        width: 1000px;
+        max-width: 1020px;
+        margin: 0 auto;
+      }
+      
+      .map-container:hover{
+        width: 1020px;
+        transition: 0.3s ease;
+
+    }
+
+      .map-image {
+        width: 100%;
+        display: block;
+      }
+
+      
+      .dot {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      .dot .popup {
+        position: absolute;
+        top: -120px; /* or whatever works */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ff0000;
+        border-radius: 8px;
+        width: 200px;
+        padding: 10px;
+        display: none;
+        z-index: 10; /* Popup above dot */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+
+      /* Label text beside the dot */
+.dot .label {
+  position: absolute;
+  opacity: 0;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 2px 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show labels when hovering over the whole map container */
+.map-container:hover .dot .label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0); /* Slide to original position */
+}
+
+/* Label to the RIGHT of the dot (default) */
+.dot .label.right {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%) translateX(50%);
+}
+
+/* Label to the LEFT of the dot */
+.dot .label.left {
+  top: 50%;
+  right: 20px;
+  left: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Label ABOVE the dot */
+.dot .label.top {
+  bottom: 100%; /* places it just above the dot */
+  left: 50%;
+  top: auto;
+  transform: translateX(-50%);
+}
+
+/* Label BELOW the dot */
+.dot .label.bottom {
+  top: 125%; /* places it just below the dot */
+  left: 50%;
+  transform: translateX(-50%);
+}
+      
+      .popup {
+        position: absolute;
+        top: -120px; /* Adjust depending on content */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid #ff0000;
+        border-radius: 8px;
+        width: 200px;
+        padding: 10px;
+        display: none;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        display: block;
+        pointer-events: none; /* prevent blocking hover */
+      }
+      
+      .popup img {
+        width: 100%;
+        border-radius: 4px;
+      }
+      
+      .popup .info {
+        margin-top: 5px;
+        max-height: 250px;
+        overflow-y: auto;
+      }
+
+      .popup .info::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      .popup .info::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 3px;
+      }
+      
+      .popup .info::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+      }
+
+        .info{
+          color: black;
+        }
+      
+      .dot:hover .popup {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+    .info p{
+        color: black;
+      }
+
+      .ash-text{
+        width: 650px;
+      }
+
+      #about-ash{
+        background-color: white;
+        border-radius: 6px;
+      }
+
+      #about-ash p{
+        color: black;
+        padding: 1.6em;
+      }
+
+      .ash-photo{
+        padding: 1.6em;
+        border-radius: 10px;
+        margin-top: 5%;
+        margin-left: 2%;
+      }
+
+      #site-footer {
+        background-color: #000000;
+        color: #fff;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 14px;
+      }
+      
+      #site-footer .footer-content {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      .footer-nav {
+        margin-top: 10px;
+      }
+      
+      .footer-nav a {
+        color: #bbb;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      
+      .footer-nav a:hover {
+        color: #fff;
+      }
+  
+      h1 {
+        margin-bottom: 30px;
+      }
+  
+      .contact-links {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+  
+      .contact-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 12px 20px;
+        border: 2px solid #333;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+  
+      .contact-links a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+      
