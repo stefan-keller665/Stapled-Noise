@@ -604,20 +604,12 @@
         pointer-events: auto;
       }
 
-      .dot{
-        z-index: 2;
-      }
-
-      .label{
-        z-index: 1;
-      }
-
-      .popup{
-        z-index: 3;
-      }
-
     .info p{
         color: black;
+      }
+
+      .dot-wrapper{
+        z-index: 10;
       }
 
       .ash-text{
