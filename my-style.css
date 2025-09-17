@@ -608,7 +608,7 @@
         color: black;
       }
 
-      .dot-wrapper{
+      .dot-wrapper:hover{
         z-index: 10;
       }
 
