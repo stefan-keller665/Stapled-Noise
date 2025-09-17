@@ -17,7 +17,14 @@
         background-color: var(--black);
         font-family: var(--body-font);
         font-weight: 400;
+        font-size: 16px;
         overflow-x: hidden;
+    }
+
+    @media (max-width: 768px) {
+      body{
+        font-size:14px
+      }
     }
 
      main{
@@ -25,7 +32,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        max-width: 1200px;
+        max-width: 100%;
         margin: auto;
     }
 
@@ -42,11 +49,7 @@
     strong{
         font-family: var(--title-font);
         font-weight: 500;
-        font-size: 35pt;
-    }
-
-    .zine{
-        background-image: url(Images/map.jpg);
+        font-size: 3rem;
     }
 
 #page-top{
@@ -118,7 +121,7 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 20vw;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -162,7 +165,7 @@
     }
 
     hr {
-        margin: 0em 0px 0px;
+        margin: 0em 0em 0em;
     }
 
      section h2 {
@@ -213,7 +216,7 @@
         background-color: #000000;
         color: rgb(255, 255, 255); /* White text */
         border: rgb(0, 0, 0) 30px;
-        font-size: 20px; /* Text size */
+        font-size: 2rem; /* Text size */
         cursor: pointer; /* Changes the mouse cursor to a hand on hover */
         border-radius: 5px; /* Rounded corners */
         transition: background-color 0.3s ease; /* Smooth transition for hover effect */
@@ -246,13 +249,13 @@
 
     .two-column-container {
         display: inline-grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 2fr;
         width: 100%;
         text-align: left;
         margin: 0em 0;
     }
     .two-column-container img{
-        border-radius: 1em;
+        border-radius: 0.5em;
     }
 
     .section digital-handbook{
@@ -625,8 +628,7 @@
       }
 
       #about-ash{
-        background-color: white;
-        border-radius: 12px;
+        background-color: white
       }
 
       #about-ash p{
