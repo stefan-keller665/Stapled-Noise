@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Special+Elite&display=swap');
-
 :root{
         /* colors */
         --black: #000000;
@@ -27,7 +26,7 @@
         width: 100%;
         max-width: 1200px;
         margin: auto;
-        min-width: 1000px;
+        min-width: auto;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -37,19 +36,18 @@
     }
 
     p{
-        color:var(--white)
+        color:var(--white);
+        text-size-adjust: auto;
+        
     }
 
     strong{
         font-family: var(--title-font);
         font-weight: 500;
-        font-size: 35pt;
+        font-size: clamp(0.1rem, 2vw + 1rem, 3rem);
     }
 
 
-#page-top{
-    justify-content: center;
-}
 
     a{
         color: var(--white);
@@ -62,15 +60,16 @@
     nav {
         display: flex;
         justify-content: center;
-        top: 0;
+        top: 1;
         text-align: center;
         background-color: var(--black);
-        font-size: 1.6em;
         font-weight: 500;
         /* z-index brings items forward or backward in relation to other content */
         z-index: 2;
         font-family: var(--title-font);
+        font-size: clamp(0.1rem, 1vw + 0.5rem, 5rem);
         border-radius: 5px; /* Rounded corners */
+        
     }
 
     nav a {
@@ -100,7 +99,7 @@
   color: white;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
-  font-size: 1em;
+  font-size: inherit;
   margin: 0.4em;
   padding: 0.4em 1em;
 }
@@ -124,7 +123,6 @@
 /* Links inside the dropdown */
 .dropdown-content a {
   float: none;
-  font-size: 0.6em;
   font-family: var(--body-font);
   color: black;
   text-decoration: none;
@@ -146,13 +144,15 @@
         display: flex;
         align-items: center;
         width: 100vw;
+        min-width: 500px;
     }
      header h1 {
         padding: 1rem;
         width: 100%;
         margin: auto;
-        max-width: 100%; /* Ensures the image will not exceed its container's width */
-        height: auto;    /* Maintains the image's aspect ratio */
+        max-width: 100%;
+        height: auto; /* Ensures the image will not exceed its container's width */
+   /* Maintains the image's aspect ratio */
     }
 
       header h1 span{
@@ -169,6 +169,15 @@
     }
     section h3 {
         font-size: 2em;
+    }
+
+    #page-top{
+      justify-content: center;
+    }
+
+    .stapled-noise-logo{
+      max-width: 20%;
+      min-width: 10vw;
     }
 
 
@@ -211,7 +220,7 @@
         background-color: #000000;
         color: rgb(255, 255, 255); /* White text */
         border: rgb(0, 0, 0) 30px;
-        font-size: 20px; /* Text size */
+        font-size: clamp(0.1rem, 1vw + 0.5rem, 5rem); /* Text size */
         cursor: pointer; /* Changes the mouse cursor to a hand on hover */
         border-radius: 5px; /* Rounded corners */
         transition: background-color 0.3s ease; /* Smooth transition for hover effect */
@@ -244,43 +253,70 @@
 
     .two-column-container {
         display: inline-grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 20vw 45vw;
         width: 100%;
+        min-width: auto;
         text-align: left;
-        margin: 0em 0;
-    }
-    .two-column-container img{
-        border-radius: 1em;
-    }
-
-    .section digital-handbook{
-        margin-left: 0%;
-    }
-
-    .img-text {
-        display: flex;
+        margin: 2vw 1vw;
         align-items: center;
     }
-
-    .about-text{
-    width: 55rem;
-    font-size: x-large;
-    height: auto;
-    min-width: 20rem;
-    text-overflow: wrap;
+    .two-column-container img{
+        border-radius: 0em;
+        width: 20vw;
     }
+
+
+
+
+    .img-text {
+      min-width: auto;
+        display: flex;
+        align-items: center;
+        text-overflow: wrap;
+        color: white;
+    }
+
+      .about-text {
+        font-size: clamp(0.1rem, 1vw + 0.5rem, 5rem);
+        width: 40vw;
+      }
+
+
+    .two-column-container2 {
+        display: inline-grid;
+        grid-template-columns: 50vw 25vw;
+        width: 100%;
+        min-width: auto;
+        text-align: left;
+        margin: 0 0;
+        align-items: center;
+    }
+    .two-column-container2 img{
+        border-radius: 0em;
+        width: 45vw;
+    }
+    .handbook{
+      width: 60vw;
+      align-items: center;
+    }
+
 
     .handbook-text{
         width: 30rem;
-        font-size: x-large
+        padding: 3%;
+        font-size: 150%;
+        font-size: clamp(0.1rem, 1vw + 0.2rem, 5rem);
+        text-overflow: wrap;
     }
 
     .handbook-heading{
-        font-size: 64pt;
+      font-size: clamp(0.3rem, 2.5vw + 1rem, 10rem);
     }
 
     .radio-one{
-        margin-left: 10%;
+        margin-left: 1;
+        margin-right: none;
+        size: 50vw;
     }
 
     .handbook-button {
@@ -290,9 +326,10 @@
     background-color: #ffffff;
     color: rgb(0, 0, 0); /* White text */
     border: white 30px;
-    width: 200px;
-    padding: 20px 20px; /* Padding around the text */
-    font-size: 30px; /* Text size */
+    width: 10vw;
+    min-width: 120px;
+    padding: 1vw 1vw; /* Padding around the text */
+    font-size: clamp(0.1rem, 1vw + 0.5rem, 5rem);
     cursor: pointer; /* Changes the mouse cursor to a hand on hover */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
@@ -309,11 +346,23 @@
 
 
     .handbook:hover{
-        width: 710px;
+        width: 95%;
         transition: 0.3s ease;
     }
 
     /*** Carousel Section ***/
+@media screen and (max-width:768){
+    .desktop {
+      display: hide;
+    }
+  }
+
+@media screen and (min-width:800) {
+  .mobile {
+    display: hide;
+  }
+}
+
 .slideshow-container {
     max-width: 1000px;
     position: relative;
@@ -447,13 +496,13 @@
       
       .map-container {
         position: relative;
-        width: 1000px;
+        min-width: auto;
         max-width: 1020px;
         margin: 0 auto;
       }
       
       .map-container:hover{
-        width: 1020px;
+        width: 105%;
         transition: 0.3s ease;
 
     }
@@ -466,8 +515,10 @@
       
       .dot {
         position: absolute;
-        width: 15px;
-        height: 15px;
+        max-width: 15px;
+        max-height: 15px;
+        min-width: auto;
+        max-width: auto;
         background-color: red;
         border-radius: 50%;
         cursor: pointer;
@@ -615,6 +666,7 @@
 
       .ash-text{
         width: 650px;
+        min-width: auto;
       }
 
       #about-ash{
@@ -625,7 +677,8 @@
       #about-ash p{
         color: black;
         padding: 2em;
-        width: 800px;
+       max-width: 800px;
+       min-width: auto;
       }
 
       .ash-photo{
@@ -633,6 +686,8 @@
         border-radius: 10px;
         margin-top: 5%;
         margin-left: 20%;
+        size: 100%;
+        min-width: auto;
       }
 
       #site-footer {
