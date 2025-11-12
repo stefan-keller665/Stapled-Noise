@@ -29,6 +29,20 @@ body {
     min-width: 320px;
 }
 
+/*
+Source - https://stackoverflow.com/a
+Posted by pollux1er, modified by community. See post 'Timeline' for change history
+Retrieved 2025-11-12, License - CC BY-SA 4.0
+*/
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+}
+
+
 main {
     display: flex;
     flex-direction: column;
@@ -138,6 +152,7 @@ main {
   text-decoration: none;
   display: block;
   text-align: left;
+  font-size: clamp(0.8rem, 1vw + 0.2rem, 1.2rem);
 }
 
 /* Add a grey background color to dropdown links on hover */
@@ -154,7 +169,7 @@ main {
         display: flex;
         align-items: center;
         width: 100vw;
-        min-width: 500px;
+        min-width: auto;
     }
      header h1 {
         padding: 1rem;
