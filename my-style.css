@@ -571,6 +571,7 @@ main {
         border-radius: 50%;
         cursor: pointer;
         transform: translate(-50%, -50%);
+        z-index: 1;
       }
 
       .dot .popup {
@@ -619,6 +620,7 @@ main {
   top: 50%;
   left: 20px;
   transform: translateY(-50%) translateX(50%);
+  z-index: 5;
 }
 
 /* Label to the LEFT of the dot */
@@ -627,6 +629,7 @@ main {
   right: 20px;
   left: auto;
   transform: translateY(-50%) translateX(0);
+  z-index: 5;
 }
 
 /* Label ABOVE the dot */
@@ -635,6 +638,7 @@ main {
   left: -150%;
   top: auto;
   transform: translateX(-50%);
+  z-index: 5;
 }
 
 /* Label BELOW the dot */
@@ -642,10 +646,12 @@ main {
   top: 250%; /* places it just below the dot */
   left: -150%;
   transform: translateX(-50%);
+  z-index: 5;
 }
 
 .dot .label.top-right{
   bottom: -30%;
+  z-index: 5;
 }
       
       .popup {
@@ -664,6 +670,7 @@ main {
         transition: opacity 0.2s ease;
         display: block;
         pointer-events: none; /* prevent blocking hover */
+        z-index: 100;
       }
       
       .popup img {
@@ -711,6 +718,10 @@ main {
       .dot-wrapper:hover{
         z-index: 10;
       }
+
+    .dot .label{
+      z-index: 10;
+    }
 
 
 
