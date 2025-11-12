@@ -7,27 +7,37 @@
         /* fonts */
         --title-font: "Special Elite";
         --body-font: "Montserrat";
+
+            /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 3rem;
     }
 
-    * {box-sizing:border-box}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-     body {
-        margin: auto;
-        background-color: var(--black);
-        font-family: var(--body-font);
-        font-weight: 400;
-        overflow-x: hidden;
-    }
+body {
+    background-color: var(--black);
+    font-family: var(--body-font);
+    font-weight: 400;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    min-width: 320px;
+}
 
-     main{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-        min-width: auto;
-    }
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Responsive width */
+    max-width: 1200px;
+    margin: var(--space-md) auto;
+    padding: 10%;
+}
 
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--title-font);
@@ -214,7 +224,7 @@
       }
 
       .about-button {
-        display: inline-flexbox;
+        display: column;
         font-family: var(--body-font);
         margin-top: 1.2em;
         background-color: #000000;
@@ -251,104 +261,143 @@
 
 
 
+/* =========================================================================
+   4. Layouts (Containers & Sections)
+   ========================================================================= */
+
+/* All containers now stack vertically by default */
+/* About Stapled Noise Container */
+.two-column-container {
+    display: flex;
+    flex-direction: column-reverse; /* STACKING on mobile */
+    align-items: center;
+    width: 100%;
+    margin: var(--space-lg) 0;
+    text-align: center;
+}
+
+.two-column-container img {
+    width: 40%; /* Image is large but contained */
+    max-width: 400px;
+    height: auto;
+    margin-bottom: var(--space-md);
+}
+
+/* Handbook Container */
+
+.two-column-container2 {
+    display: flex;
+    flex-direction: column; /* STACKING on mobile */
+    align-items: right;
+    width: 100%;
+    margin: var(--space-lg) 0;
+}
+
+.two-column-container2 img {
+    width: 100%; /* Image is large but contained */
+    max-width: 800px;
+    min-width: none;
+    height: auto;
+    margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .two-column-container, .two-column-container2 {
+        flex-direction: row; /* Desktop row layout */
+        justify-content: space-between;
+        align-items: flex-start; /* Align content to the top of the row */
+        text-align: left;
+    }
+
+    /* Standard container: Image (Left), Text (Right) */
     .two-column-container {
-        display: inline-grid;
-        grid-template-columns: 20vw 45vw;
-        width: 100%;
-        min-width: auto;
-        text-align: left;
-        margin: 2vw 1vw;
-        align-items: center;
-    }
-    .two-column-container img{
-        border-radius: 0em;
-        width: 20vw;
+        flex-direction: row;
     }
 
-
-
-
-    .img-text {
-      min-width: auto;
-        display: flex;
-        align-items: center;
-        text-overflow: wrap;
-        color: white;
+        .two-column-container img {
+        width: 30%; /* Both image and text take up about half the width */
+        max-width: 200px;
+        margin-bottom: 0;
     }
 
-      .about-text {
-        font-size: clamp(0.1rem, 1vw + 0.5rem, 5rem);
-        width: 40vw;
-      }
-
-
+    /* Handbook container: Text (Right), Image (Left) */
     .two-column-container2 {
-        display: inline-grid;
-        grid-template-columns: 50vw 25vw;
-        width: 100%;
-        min-width: auto;
-        text-align: left;
-        margin: 0 0;
-        align-items: center;
+        flex-direction: row;
     }
-    .two-column-container2 img{
-        border-radius: 0em;
-        width: 45vw;
-    }
-    .handbook{
-      width: 60vw;
-      align-items: center;
+ 
+    .two-column-container2 img {
+        width: 100%; /* Both image and text take up about half the width */
+        max-width: 1000px;
+        margin-bottom: 0;
     }
 
-
-    .handbook-text{
-        width: 30rem;
-        padding: 3%;
-        font-size: 150%;
-        font-size: clamp(0.1rem, 1vw + 0.2rem, 5rem);
-        text-overflow: wrap;
+    .about-text, .handbook-text {
+        width: 45%;
+        flex-wrap: wrap; /* Remove horizontal padding added for mobile centering */
     }
 
-    .handbook-heading{
-      font-size: clamp(0.3rem, 2.5vw + 1rem, 10rem);
+    /* Add spacing between elements in the row */
+    .two-column-container img {
+        margin-right: var(--space-md);
     }
-
-    .radio-one{
-        margin-left: 1;
-        margin-right: none;
-        size: 50vw;
+    .handbook-text {
+        margin-right: var(--space-md);
     }
-
+    
     .handbook-button {
-    display: inline-flexbox;
-    font-family: var(--title-font);
-    margin-top: 1.2em;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0); /* White text */
-    border: white 30px;
-    width: 10vw;
-    min-width: 120px;
-    padding: 1vw 1vw; /* Padding around the text */
-    font-size: clamp(0.1rem, 1vw + 0.5rem, 5rem);
-    cursor: pointer; /* Changes the mouse cursor to a hand on hover */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.handbook-button:hover {
-  background-color: #acacac; 
-}
-
-.handbook-button:active {
-  background-color: #850000; 
-}
-
-
-
-    .handbook:hover{
-        width: 95%;
-        transition: 0.3s ease;
+        /* Maintain left alignment on desktop */
+        margin-left: 0;
     }
+}
+
+.about-text, .handbook-text, .ash-text {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 var(--space-sm);
+    text-align: center;
+}
+
+
+
+.handbook-button {
+    display: inline-block;
+    font-family: var(--title-font);
+    margin-top: var(--space-md);
+    background-color: var(--white);
+    color: var(--black);
+    width: 50%;
+    min-width: 150px;
+    padding: 1em 1.5em;
+    font-size: clamp(0.9rem, 3vw + 0.5rem, 1.2rem);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.handbook-button:hover { background-color: #acacac; }
+.handbook-button:active { background-color: #850000; }
+
+/* About Ash Section */
+#about-ash {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: var(--space-md);
+    width: 90%;
+    max-width: 800px;
+    margin: var(--space-lg) auto;
+}
+#about-ash p {
+    color: var(--black);
+    text-align: left;
+}
+.ash-photo {
+    width: 180%;
+    max-width: 500px;
+    margin: var(--space-md) auto;
+    display: block;
+    border-radius: 10px;
+}
 
     /*** Carousel Section ***/
 @media screen and (max-width:768){
@@ -515,10 +564,9 @@
       
       .dot {
         position: absolute;
-        max-width: 15px;
-        max-height: 15px;
-        min-width: auto;
-        max-width: auto;
+        width: 0.7rem;
+        height: 0.7rem;
+        min-width: 5px;
         background-color: red;
         border-radius: 50%;
         cursor: pointer;
@@ -527,7 +575,7 @@
 
       .dot .popup {
         position: absolute;
-        top: -px; /* or whatever works */
+        top: -200px; /* or whatever works */
         left: 50%;
         transform: translateX(-50%);
         background-color: white;
@@ -547,7 +595,7 @@
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   padding: 2px 2px;
-  font-size: 13px;
+  font-size: 0.7rem;
   white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   pointer-events: none;
@@ -664,31 +712,11 @@
         z-index: 10;
       }
 
-      .ash-text{
-        width: 650px;
-        min-width: auto;
-      }
 
-      #about-ash{
-        background-color: white;
-        border-radius: 12px;
-      }
 
-      #about-ash p{
-        color: black;
-        padding: 2em;
-       max-width: 800px;
-       min-width: auto;
-      }
 
-      .ash-photo{
-        padding: 1.6em;
-        border-radius: 10px;
-        margin-top: 5%;
-        margin-left: 20%;
-        size: 100%;
-        min-width: auto;
-      }
+
+
 
       #site-footer {
         background-color: #000000;
